@@ -245,18 +245,21 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
 			return err
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		return nil
 
 	case "DeviceInformation":
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			DeviceInformation
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -264,6 +267,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.DeviceInformation = x.DeviceInformation
 		return nil
 
@@ -271,6 +275,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			InstallApplication
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -278,6 +283,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.InstallApplication = x.InstallApplication
 		return nil
 
@@ -285,6 +291,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			AccountConfiguration
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -292,6 +299,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.AccountConfiguration = x.AccountConfiguration
 		return nil
 
@@ -299,6 +307,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			ScheduleOSUpdateScan
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -306,6 +315,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.ScheduleOSUpdateScan = x.ScheduleOSUpdateScan
 		return nil
 
@@ -313,6 +323,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			ScheduleOSUpdate
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -320,6 +331,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.ScheduleOSUpdate = x.ScheduleOSUpdate
 		return nil
 
@@ -327,6 +339,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			InstallProfile
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -334,6 +347,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.InstallProfile = x.InstallProfile
 		return nil
 
@@ -341,6 +355,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			RemoveProfile
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -348,6 +363,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.RemoveProfile = x.RemoveProfile
 		return nil
 
@@ -355,6 +371,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			InstallProvisioningProfile
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -362,6 +379,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.InstallProvisioningProfile = x.InstallProvisioningProfile
 		return nil
 
@@ -369,6 +387,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			RemoveProvisioningProfile
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -376,6 +395,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.RemoveProvisioningProfile = x.RemoveProvisioningProfile
 		return nil
 
@@ -383,6 +403,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			InstalledApplicationList
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -390,6 +411,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.InstalledApplicationList = x.InstalledApplicationList
 		return nil
 
@@ -397,6 +419,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			DeviceLock
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -404,6 +427,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.DeviceLock = x.DeviceLock
 		return nil
 
@@ -411,6 +435,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			ClearPasscode
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -418,6 +443,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.ClearPasscode = x.ClearPasscode
 		return nil
 
@@ -425,6 +451,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			EraseDevice
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -432,6 +459,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.EraseDevice = x.EraseDevice
 		return nil
 
@@ -439,6 +467,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			RequestMirroring
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -446,6 +475,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.RequestMirroring = x.RequestMirroring
 		return nil
 
@@ -453,6 +483,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			DeleteUser
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -460,6 +491,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.DeleteUser = x.DeleteUser
 		return nil
 
@@ -467,6 +499,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			EnableLostMode
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -474,6 +507,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.EnableLostMode = x.EnableLostMode
 		return nil
 
@@ -481,6 +515,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			ApplyRedemptionCode
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -488,6 +523,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.ApplyRedemptionCode = x.ApplyRedemptionCode
 		return nil
 
@@ -495,6 +531,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			InstallMedia
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -502,6 +539,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.InstallMedia = x.InstallMedia
 		return nil
 
@@ -509,6 +547,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			RemoveMedia
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -516,6 +555,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.RemoveMedia = x.RemoveMedia
 		return nil
 
@@ -523,6 +563,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			Settings
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -530,6 +571,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.Settings = x.Settings
 		return nil
 

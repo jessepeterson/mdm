@@ -9,7 +9,8 @@ import (
 
 // CommandRequest represents an MDM command request
 type CommandRequest struct {
-	UDID string `json:"udid"`
+	UDID       string `json:"udid"`
+	CustomUUID string `json:"custom_uuid"`
 	Command
 }
 
@@ -228,8 +229,10 @@ type ScheduleOSUpdateScan struct {
 
 type data []byte
 
-func newPayload(requestType string) *Payload {
-	u := uuid.NewV4()
-	return &Payload{u.String(),
-		&Command{RequestType: requestType}}
+func newPayload(requestType string, customUuid string) *Payload {
+	u := customUuid
+	if u == "" {
+		u = uuid.NewV4().String()
+	}
+	return &Payload{u, &Command{RequestType: requestType}}
 }

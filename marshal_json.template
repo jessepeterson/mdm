@@ -26,18 +26,21 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
 			return err
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
         return nil
 	{{ range . }}
 	case "{{.Case}}":
 		var x struct {
 			RequestType string `json:"request_type"`
 			UDID        string `json:"udid"`
+			CustomUUID  string `json:"custom_uuid"`
 			{{.Case}}
 		}
 		if err := json.Unmarshal(d, &x); err != nil {
@@ -45,6 +48,7 @@ func (c *CommandRequest) UnmarshalJSON(d []byte) error {
 		}
 		c.RequestType = x.RequestType
 		c.UDID = x.UDID
+		c.CustomUUID = x.CustomUUID
 		c.{{.Case}} = x.{{.Case}}
 		return nil
 	{{ end }}

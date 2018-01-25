@@ -22,7 +22,7 @@ package mdm
 
 func NewPayload(request *CommandRequest) (*Payload, error) {
 	requestType := request.RequestType
-	payload := newPayload(requestType)
+	payload := newPayload(requestType, request.CustomUUID)
 	switch requestType {
 	{{range .ManyFields}}
 	case "{{.Name}}":
